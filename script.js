@@ -48,7 +48,7 @@ function getWeather(name) {
         
         // Get forecast for next 5 days
         .then(function(response){
-            
+           
         })
     });  
 }
@@ -59,10 +59,29 @@ searchBtnEl.addEventListener("click",function() {
     getWeather(input);
     savedHistory.push(input);
     localStorage.setItem("search", JSON.stringify(savedHistory));
-    // Call function for search history
+    saveHistory();
 })
     
+// Function to convert the temperature
 function convertTemp(t) {
     return Math.floor(1.8 * (t - 273.15) + 32);
 }
     
+// Function to save the search history in search bar
+function saveHistory() {
+    for (var i = 0; i < savedHistory.length; i++) {
+        var city = document.createElement("input");
+        city.setAttribute("type","text");
+        city.setAttribute("class", "form-control d-block bg-white");
+        city.setAttribute("value", savedHistory[i]);
+        // If you click on it, you get that city's weather info
+        city.addEventListener("click", function() {
+            getWeather(city.value);
+        })
+
+        historyEl.append(city);
+    }
+}
+    
+saveHistory();
+
