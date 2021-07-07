@@ -9,3 +9,5 @@ var windEl = document.getElementById("wind");
 var UVEl = document.getElementById("UV");
 var historyEl = document.getElementById("history");
 var savedHistory = JSON.parse(localStorage.getItem("search"));
+
+var APIKey = "c9a9ed03a355403f4cb9a36e931c0b4a";
