@@ -10,27 +10,63 @@
     <title>Weather Dashboard</title>
 </head>
 <body>
+    <!--Add nav bar at top of page-->
     <nav class="navbar navbar-dark bg-dark">
         <span class="navbar-brand mb-0 h1 w-100 text-center">Weather Dashboard</span>
     </nav>
 
+    <!--Create container class to hold weather info-->
     <div class="container">
         <div class="row">
             <div class="col-4 bg-light">
+                <!--Create search bar to city-->
                 <p class="search-header my-1">Search for a City:</p>
                 <div class="input-group mb-3">
-                    <input id="city" type="text" class="form-control">
+                    <input id="cityInput" type="text" class="form-control">
                     <div class="input-group-append">
+                        <!--Create search button-->
                         <button class="btn btn-primary" type="button" id="search-button">
                             <i class="fas fa-search"></i>
                         </button>
                     </div>
                 </div>
+                <!--Create form to save history to local storage-->
+                <form id="history"></form>
             </div>
             <div class="col-8">
                 <div class="row mr-0">
+                    <!--Create rounded border around city weather information-->
                     <div class="col-12 border border-dark m-3 rounded">
-                        
+                        <div class="row">
+                            <div class="col-12">
+                                <span id="city" class="city align-middle"></span>
+                                <img id="weatherInfo" src="">
+                            </div>
+                        </div>
+                        <!--Create class for temperature info-->
+                        <div class="row">
+                            <div class="col-12">
+                                <p id="temp"></p>
+                            </div>
+                        </div>
+                        <!--Create class for humidity info-->
+                        <div class="row">
+                            <div class="col-12">
+                                <p id="humidity"></p>
+                            </div>
+                        </div>
+                        <!--Create class for wind speed info-->
+                        <div class="row">
+                            <div class="col-12">
+                                <p id="wind"></p>
+                            </div>
+                        </div>
+                        <!--Create class for UV index info-->
+                        <div class="row">
+                            <div class="col-12">
+                                <p id="UV"></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -42,6 +78,7 @@
         </div>
     </div>
 
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./script.js"></script>
 </body>
 </html>
