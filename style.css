@@ -1,12 +1,18 @@
+/* Change nav bar font to bigger size */
 .navbar-brand {
     font-size: 30px;
 }
 
+/* Change search bar header to bigger size */
 .search-header {
     font-size: 20px;
 }
 
+/* Change city name to bigger size and bolder */
 .city {
     font-size: 25px;
     font-weight: bold;
+}
+
+.forecast {
 }
